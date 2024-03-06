@@ -1,5 +1,5 @@
 Django
-mssql-django
 djangorestframework
+mssql-django
 
 python_version >= "3.9"
