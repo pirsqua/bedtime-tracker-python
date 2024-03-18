@@ -4,6 +4,12 @@ from .dtos import BedtimeDTO, ChildDTO, PrizeDTO
 
 class BedtimeService:
     @staticmethod
+    def get_all_bedtimes():
+        bedtimes = Bedtime.objects.all()
+        bedtime_dtos = [BedtimeDTO(bedtime) for bedtime in bedtimes]
+        return bedtime_dtos
+    
+    @staticmethod
     def get_bedtime_by_id(bedtime_id):
         bedtime = Bedtime.objects.get(id=bedtime_id)
         return BedtimeDTO(bedtime)
@@ -17,6 +23,12 @@ class BedtimeService:
 
 class ChildService:
     @staticmethod
+    def get_all_children():
+        children = Child.objects.all()
+        child_dtos = [ChildDTO(child) for child in children]
+        return child_dtos
+    
+    @staticmethod
     def get_child_by_id(child_id):
         child = Child.objects.get(id=child_id)
         return ChildDTO(child)
@@ -28,6 +40,12 @@ class ChildService:
 
 
 class PrizeService:
+    @staticmethod
+    def get_all_prizes():
+        prizes = Prize.objects.all()
+        prize_dtos = [PrizeDTO(prize) for prize in prizes]
+        return prize_dtos
+    
     @staticmethod
     def get_prize_by_id(prize_id):
         prize = Prize.objects.get(id=prize_id)
