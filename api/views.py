@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from .models import Bedtime, Child, Prize
 from .serializers import BedtimeSerializer, ChildSerializer, PrizeSerializer
 
+
 class BedtimeViewSet(viewsets.ModelViewSet):
     queryset = Bedtime.objects.all()
     serializer_class = BedtimeSerializer

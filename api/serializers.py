@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Bedtime, Child, Prize
 
+
 class BedtimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bedtime
