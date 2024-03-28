@@ -18,11 +18,11 @@ class BedtimeViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        child_id = request.data['childid']
-        sleep_start = request.data['sleepstart']
-        sleep_end = request.data['sleepend']
+        child_id = request.data['childId']
+        sleep_start = request.data['sleepStart']
+        sleep_end = request.data['sleepEnd']
         success = request.data['success']
-        is_nap = request.data['isnap']
+        is_nap = request.data['isNap']
         
         bedtime_dto = BedtimeService.create_bedtime(child_id, sleep_start, sleep_end, success, is_nap)
         serializer = BedtimeSerializer(bedtime_dto)
@@ -62,7 +62,7 @@ class PrizeViewSet(viewsets.ViewSet):
     def create(self, request):
         name = request.data['name']
         description = request.data['description']
-        image_url = request.data['imageurl']
+        image_url = request.data['imageUrl']
         priority = request.data['priority']
         
         prize_dto = PrizeService.create_prize(name, description, image_url, priority)

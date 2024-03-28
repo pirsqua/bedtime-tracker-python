@@ -1,21 +1,22 @@
 class BedtimeDTO:
     def __init__(self, bedtime):
-        self.bedtimeid = bedtime.bedtimeid
-        self.childid = bedtime.childid
-        self.sleepstart = bedtime.sleepstart
-        self.sleepend = bedtime.sleepend
+        self.bedtimeId = bedtime.bedtime_id
+        # Convert the child model instance to a ChildDTO instance
+        self.child = ChildDTO(bedtime.child)
+        self.sleepStart = bedtime.sleep_start
+        self.sleepEnd = bedtime.sleep_end
         self.success = bedtime.success
-        self.isnap = bedtime.isnap
+        self.isNap = bedtime.is_nap
 
 class ChildDTO:
     def __init__(self, child):
-        self.childid = child.childid
+        self.childId = child.child_id
         self.name = child.name
 
 class PrizeDTO:
     def __init__(self, prize):
-        self.prizeid = prize.prizeid
+        self.prizeId = prize.prize_id
         self.name = prize.name
         self.description = prize.description
-        self.imageurl = prize.imageurl
+        self.imageUrl = prize.image_url
         self.priority = prize.priority
